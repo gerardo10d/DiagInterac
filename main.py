@@ -13,7 +13,7 @@ ec = fc / Ec
 dBarra = 15.9  # mm diámetro de 5/8"
 ABarra = 199  # mm2 área de 5/8"
 nBarrasb = 3  # número de barras en el lado b
-nBarrash = 3  # número de barras en el lado h
+nBarrash = 4  # número de barras en el lado h
 fy = 420  # MPa
 Es = 200e3  # MPa
 ey = fy / Es
@@ -23,7 +23,7 @@ dEstribo = 9.5  # mm siempre es de 3/8" el estribo en cols
 
 # Sección columna-------------------
 b = 300  # mm
-h = 300  # mm
+h = 700  # mm
 recubrimiento = 40  # mm
 dc = recubrimiento + dEstribo + dBarra / 2  # mm
 dc = 5 * math.ceil(dc / 5)  # Aplica un redondeo al múltiplo de 5 superior
@@ -31,8 +31,8 @@ d = h - dc  # mm
 print(f'd: {d} mm. dc: {dc} ¿Redondear?')
 
 # Puntos de P-M para verificar en el diagrama----------
-Mx = np.array([169.2, 0])
-Py = np.array([422.6, 0])
+Mx = np.array([30.0, 0])
+Py = np.array([822.0, 0])
 
 # Bloque de compresión
 paso = 1  # Cada cuántos milímetros se modifica el bloque de compresión

@@ -1,3 +1,4 @@
+import math
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -25,7 +26,19 @@ def tablaFibras(c, nBarrash, nBarrasb, b, h, fc, Ec, fy, Es, ABarra, dc):
     filasBarras = np.ones(nBarrash) * 2
     filasBarras[0], filasBarras[-1] = nBarrasb, nBarrasb
     AiAcero = filasBarras * ABarra
-    yiAcero = np.array([h / 2 - dc, 0, -(h / 2 - dc)])
+    yiAcero = np.zeros(nBarrash)
+    yiExtremo = h / 2 - dc
+    yiAcero[0], yiAcero[-1] = yiExtremo,  -yiExtremo
+    #print(yiAcero)
+    numVecesResta = math.ceil(nBarrash / 2) - 1
+    distanciaEntreBarrasEnH = (h - 2 * dc) / (nBarrash - 1)
+    for i in range(1, numVecesResta + 1):
+        yiAcero[i] = yiExtremo - i * distanciaEntreBarrasEnH
+        yiAcero[-1 - i] = -yiAcero[i]
+
+    print(yiAcero)
+    #yiAcero = np.array([h / 2 - dc, 0, -(h / 2 - dc)])
+
     eiAcero = fiy * (c - (h / 2 - yiAcero))
     siAcero = np.zeros(numFibAcero)
     for i in range(len(eiAcero)):
@@ -93,5 +106,5 @@ def graficar(x, y, x2, y2, x3, y3, x4, y4):
     plt.xlabel("M (kN.m)", size=16)
     plt.ylabel("P (kN)", size=16)
     plt.legend()
-    # plt.grid()
+    plt.grid()
     plt.show()  # Mostrar el gráfico
