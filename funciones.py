@@ -28,16 +28,16 @@ def tablaFibras(c, nBarrash, nBarrasb, b, h, fc, Ec, fy, Es, ABarra, dc):
     AiAcero = filasBarras * ABarra
     yiAcero = np.zeros(nBarrash)
     yiExtremo = h / 2 - dc
-    yiAcero[0], yiAcero[-1] = yiExtremo,  -yiExtremo
-    #print(yiAcero)
+    yiAcero[0], yiAcero[-1] = yiExtremo, -yiExtremo
+    # print(yiAcero)
     numVecesResta = math.ceil(nBarrash / 2) - 1
     distanciaEntreBarrasEnH = (h - 2 * dc) / (nBarrash - 1)
     for i in range(1, numVecesResta + 1):
         yiAcero[i] = yiExtremo - i * distanciaEntreBarrasEnH
         yiAcero[-1 - i] = -yiAcero[i]
 
-    print(yiAcero)
-    #yiAcero = np.array([h / 2 - dc, 0, -(h / 2 - dc)])
+    # print(yiAcero)
+    # yiAcero = np.array([h / 2 - dc, 0, -(h / 2 - dc)])
 
     eiAcero = fiy * (c - (h / 2 - yiAcero))
     siAcero = np.zeros(numFibAcero)

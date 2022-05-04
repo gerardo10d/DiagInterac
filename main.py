@@ -35,7 +35,7 @@ Mx = np.array([30.0, 0])
 Py = np.array([822.0, 0])
 
 # Bloque de compresión
-paso = 1  # Cada cuántos milímetros se modifica el bloque de compresión
+paso = 10  # Cada cuántos milímetros se modifica el bloque de compresión
 fin = h  # Se analiza el bloque hasta el valor de h
 M, P, fiMn, fiPn, hztalFiX, hztalFiY = tablaBloqComp(fin, paso, nBarrash, nBarrasb, b, h, fc, Ec, fy, Es, ABarra, dc, estribos)
 

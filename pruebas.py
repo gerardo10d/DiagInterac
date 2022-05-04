@@ -8,3 +8,5 @@ import math
 # print(array)
 # M, P = np.zeros(3), np.zeros(3)
 # print(M, P)
+x = (290 + 290) / 3
+print(x/2)
