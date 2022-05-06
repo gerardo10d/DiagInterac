@@ -7,7 +7,7 @@ def tablaFibras(c, nBarrash, nBarrasb, b, h, fc, Ec, fy, Es, ABarra, dc):
     # Fibras para el concreto-------------
     eu = 0.003
     fiy = eu / c
-    numFibConc = 50
+    numFibConc = 10
     Ai = b * h / numFibConc
     yi = np.arange(1, numFibConc + 1, 1)
     # ei = np.zeros(numFibConc)
@@ -29,7 +29,6 @@ def tablaFibras(c, nBarrash, nBarrasb, b, h, fc, Ec, fy, Es, ABarra, dc):
     yiAcero = np.zeros(nBarrash)
     yiExtremo = h / 2 - dc
     yiAcero[0], yiAcero[-1] = yiExtremo, -yiExtremo
-    # print(yiAcero)
     numVecesResta = math.ceil(nBarrash / 2) - 1
     distanciaEntreBarrasEnH = (h - 2 * dc) / (nBarrash - 1)
     for i in range(1, numVecesResta + 1):
@@ -45,6 +44,8 @@ def tablaFibras(c, nBarrash, nBarrasb, b, h, fc, Ec, fy, Es, ABarra, dc):
         siAcero[i] = min(max(Es * eiAcero[i], -fy), fy)
     AisiAcero = AiAcero * siAcero
     AiyisiAcero = AisiAcero * yiAcero
+
+    # print(AiyisiAcero)
 
     P = (sum(Aisi) + sum(AisiAcero)) / 1e3  # kN
     M = (sum(Aiyisi) + sum(AiyisiAcero)) / 1e6  # kN.m
