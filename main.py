@@ -9,6 +9,8 @@ import webbrowser
 # import pickle
 # from tkinter import filedialog
 # import os
+from numpy import var
+
 from funciones import principal
 
 # colores a utilizar-------------------------------------
@@ -100,6 +102,7 @@ enth.place(x=180, y=330)
 
 # Entrada de estribos
 varOpcionTransversal = BooleanVar()
+varOpcionTransversal.set(True)
 
 labelTransversal = Label(frame1, text="Transversal:", bg=azul_oscuro, fg=claro, font=fuente)
 labelTransversal.place(x=10, y=380)
