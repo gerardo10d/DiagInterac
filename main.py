@@ -19,7 +19,7 @@ azul_medio = "#1b5998"
 naranja = "#fe9870"
 claro = "#f2eddf"
 fuente = ("Verdana", 10)
-nombre = "Diseño a Flujo Libre"
+nombre = "Diagrama de Interacción"
 
 # ----------------Interfaz gráfica-----------------------------
 
