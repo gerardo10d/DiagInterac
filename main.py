@@ -114,7 +114,7 @@ rbutEspiral.config(activebackground=azul_oscuro, activeforeground=claro, selectc
 rbutEspiral.place(x=180, y=410)
 
 # ----------------Botón de calcular-----------------------------
-botCalcular = Button(frame1, text="Calcular", width=10,
+botCalcular = Button(frame1, text="Graficar", width=10,
                      command=lambda: llamarFunciones())
 botCalcular.config(bg=claro, fg=azul_oscuro, activebackground=azul_oscuro, activeforeground=claro, font=fuente)
 botCalcular.place(x=100, y=450)
